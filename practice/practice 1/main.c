@@ -13,6 +13,6 @@ int main(void){
 
     scanf("%d", &favNum);
 
-    printf("%d\n", &favNum);
+    printf("Nice! %d is a cool number.\n", favNum);
 
 }   
