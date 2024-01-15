@@ -11,8 +11,8 @@ int main(void){
     printf("For next line then \\n and it does \n next line.\n");
     printf("Okey! Question for you now:\t What is your favorite number? ");
 
-    scanf("%d\n", &favNum);
-    
+    scanf("%d", &favNum);
+
     printf("%d\n", &favNum);
 
 }   
