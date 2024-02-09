@@ -38,7 +38,7 @@ int main(void){
 
     int sum_digits = d1 + d2 + d3 + d4 + d5;
 
-    printf("\nSum of digits: %d + %d + %d + %d + %d = %d\n", d5, d4, d3, d2, d1, sum_digits);
+    printf("\nSum of digits: %d + %d + %d + %d = %d\n", d4, d3, d2, d1, sum_digits);
 
     return 0;
 }
