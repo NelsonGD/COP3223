@@ -1,8 +1,8 @@
-// Authorship statement
 // Nelson diaz
 
 // pre-processor directive (library for input and output)
 #include <stdio.h>
+#include "main.h"
 
 // driver function (runs the whole code)
 // Void is good practice. Evades errors in the background that may happen
