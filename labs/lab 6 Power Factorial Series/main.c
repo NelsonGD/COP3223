@@ -23,6 +23,7 @@ int main(void)
     for(i = 1; i <= n; i++)
     {
         // append to your sum:
+        sum += double((power(i,i))/(factorial(i)));
         // call the power function with the right parameters
         // multiply the returned caluewith 1.0 to avoid integer division
         // divide by the function call to the fact function called with the right parameters
@@ -34,7 +35,7 @@ int main(void)
 }
 
 /*
-this function takes an int and returns its fact
+this function takes an int and returns its factorial
 */
 long long fact(int n)
 {
@@ -47,7 +48,8 @@ long long fact(int n)
 }
 
 /*
-this function takes an int x and y and calculate x^y and returns long int as the result
+this function takes an int x and y and calculate x^y 
+and returns long int as the result
 */
 long long power(int x, int y)
 {
