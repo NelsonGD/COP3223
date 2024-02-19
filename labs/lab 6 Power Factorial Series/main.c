@@ -9,42 +9,21 @@ bring the user's input.
 #include <stdio.h>
 #include "main.h"
 
-// driver function
-int main(void)
-{
-    int n; // Stores user given number
-    int i;
-    double sum = 0.0; // Stores power fact series
-
-    // prompt user input
-    printf("Enter your n:\n");
-    scanf("%d", &n);
-
-    for(i = 1; i <= n; i++)
-    {
-        // append to your sum:
-        sum += double((power(i,i))/(factorial(i)));
-        // call the power function with the right parameters
-        // multiply the returned caluewith 1.0 to avoid integer division
-        // divide by the function call to the fact function called with the right parameters
-    }
-
-    printf("\nSummation of the series from 1 to %d is: %.2lf", n, sum);
-
-    return 0;
-}
-
 /*
 this function takes an int and returns its factorial
 */
 long long fact(int n)
 {
     long long i, fact;
+
+    fact = 1.0;
     
     for(i = 1; i <= n; i++)
     {
         fact *= i;
     }
+
+    return fact;
 }
 
 /*
@@ -64,3 +43,30 @@ long long power(int x, int y)
     }
     return result;
 }
+
+// driver function
+int main(void)
+{
+    int n; // Stores user given number
+    int i;
+    double sum = 0.0; // Stores power fact series
+
+    // prompt user input
+    printf("Enter your n:\n");
+    scanf("%d", &n);
+
+    // append to your sum:
+    // call the power function with the right parameters
+    // multiply the returned caluewith 1.0 to avoid integer division
+    // divide by the function call to the fact function called with the right parameters
+    for (int i = 1; i <= n; i++) {
+        // Calculate the term and add it to the sum
+        sum += pow(i, i) / factorial(i);
+    }
+
+
+    printf("\nSummation of the series from 1 to %d is: %.2lf", n, sum);
+
+    return 0;
+}
+
