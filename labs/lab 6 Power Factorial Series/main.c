@@ -10,20 +10,20 @@ bring the user's input.
 #include "main.h"
 
 /*
-this function takes an int and returns its factorial
+this function takes an int and returns its factorialorial
 */
-long long fact(int n)
+long long factorial(int n)
 {
-    long long i, fact;
+    long long i, factorial;
 
-    fact = 1.0;
+    factorial = 1;
     
     for(i = 1; i <= n; i++)
     {
-        fact *= i;
+        factorial *= i;
     }
 
-    return fact;
+    return factorial;
 }
 
 /*
@@ -49,7 +49,7 @@ int main(void)
 {
     int n; // Stores user given number
     int i;
-    double sum = 0.0; // Stores power fact series
+    long double sum = 0.0; // Stores power factorial series
 
     // prompt user input
     printf("Enter your n:\n");
@@ -58,14 +58,14 @@ int main(void)
     // append to your sum:
     // call the power function with the right parameters
     // multiply the returned caluewith 1.0 to avoid integer division
-    // divide by the function call to the fact function called with the right parameters
-    for (int i = 1; i <= n; i++) {
+    // divide by the function call to the factorial function called with the right parameters
+    for (i = 1; i <= n; i++) {
         // Calculate the term and add it to the sum
-        sum += pow(i, i) / factorial(i);
+        sum += power(i, i) / (long double)factorial(i);
     }
 
 
-    printf("\nSummation of the series from 1 to %d is: %.2lf", n, sum);
+    printf("\nSummation of the series from 1 to %d is: %.2Lf\n", n, sum);
 
     return 0;
 }
