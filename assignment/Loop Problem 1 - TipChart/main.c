@@ -1,7 +1,5 @@
 // Nelson Diaz
 
-
-
 #include <stdio.h>
 #include "main.h"
 
