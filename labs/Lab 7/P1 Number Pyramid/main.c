@@ -15,19 +15,19 @@ void print_triangle(int max_value);
 int main(void)
 {
     // variable declaration
-    int max_value = 0; // user input
-    int count = 0; // iteration counter
+    int max_value = 0; // user input for size of triangle
+    int count = 0; // iteration counter for number of triangles
     int ch = 1;
     
-    // menu loo
+    // menu loop
     while (ch)
     {
         // prompt user input
         printf("Enter max value: ");
-        scanf("%d", &ch);
+        scanf("%d", &max_value);
 
         // function call
-        print_triangle(ch);
+        print_triangle(max_value);
 
         // increment the counter after a triangle is printed
         count++;
@@ -37,7 +37,7 @@ int main(void)
         scanf("%d", &ch);
     } 
     
-    printf("Total triangle printed: %d", count);
+    printf("Total triangle printed: %d\n", count);
 
     return 0;
 }
@@ -55,13 +55,13 @@ void print_triangle(int max_value)
     for(i = 1; i <= max_value; i++)
     {
         // need to print n-1 spaces
-        for (j = 1; i <= max_value - 1; j++)
+        for (j = 1; j <= max_value - i; j++)
         {
             printf(" ");
         }
         
         // print numbers from 1 to i
-        for (k = 1; k <= i; i++)
+        for (k = 1; k <= i; k++)
         {
             printf("%d", k);
         }
