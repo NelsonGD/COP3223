@@ -6,8 +6,6 @@ if it is, performs multiplicationi and print result. */
 // pre-processor directive
 #include <stdio.h>
 #include "main.h"
-// constants
-#define COLUMNS 10
 
 // Function prototypes
 void FillData(int A[][COLUMNS], int r, int c);
@@ -18,34 +16,40 @@ void Multiply(int M1[][COLUMNS], int r1, int c1, int M2[][COLUMNS], int r2, int 
 // driver function
 int main(void)
 {
+    // variable declaration
     int matrix1 [ROWS][COLUMNS], matrix2 [ROWS][COLUMNS];
     int rows1, columns1, rows2, columns2, i, j;
 
+    // Getting user input for matrix 1
     printf("Working for Matrix 1");
-    printf("\nEtner number of rows and columns: ");
+    printf("\nEnter number of rows and columns: ");
     scanf("%d %d", &rows1, &columns1);
 
+    // Calling function that will get and insert user given values in matrix 1
     FillData(matrix1, rows1, columns1);
 
+    // Getting user input for matrix 2
     printf("Working for Matrix 2");
     printf("\nEnter number of rows and columns: ");
     scanf("%d %d", &rows2, &columns2);
 
+    // Calling function that will get and insert user given values in matrix 1
     FillData(matrix2, rows2, columns2);
 
     // print the matrices content
     printf("\nDisplaying Matrix 1: ");
     Display(matrix1, rows1, columns1);
 
-    printf("\nDisplaying Matrix 2: ");
+    printf("\nDisplaying Matrix 2: "); 
     Display(matrix2, rows2, columns2);
 
+    // Calling function giving values and data of the matrices that it will multiply and then display results of
     Multiply(matrix1, rows1, columns1, matrix2, rows2, columns2);
 
     return 0;
 }
 
-// ADD COMMENT
+// Function takes the input for the matrix based on the number of rows and columns.
 void FillData(int A[][COLUMNS], int r, int c)
 {
 
@@ -62,6 +66,7 @@ void FillData(int A[][COLUMNS], int r, int c)
 
 }
 
+// Functions prints all the elements of the matrix with good formatting.
 void Display(int A[][COLUMNS], int r, int c)
 {
     int i, j;
@@ -76,7 +81,11 @@ void Display(int A[][COLUMNS], int r, int c)
     }
 }
 
-// ADD COMMENT
+/*
+- Function performs multiplication of two matrices and prints the results.
+- Checks wheter it is possible to do multiplication with the given dimensions.
+    - If matrices can't be multiplied then print error message.
+*/
 void Multiply(int M1[][COLUMNS], int r1, int c1, int M2[][COLUMNS], int r2, int c2)
 {
     int result[ROWS][COLUMNS]; // The dimension are always going to be THE ROWS OF MATRIX 1 & COLUMNS OF MATRIX 2
