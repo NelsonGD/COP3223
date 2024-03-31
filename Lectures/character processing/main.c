@@ -67,7 +67,7 @@ int main(void)
     char s1[50] = "cat hat";
     char s2[50] = "cat hat";
 
-
+    
 
     if(isequal(s1, s2))
         printf("Same!");
