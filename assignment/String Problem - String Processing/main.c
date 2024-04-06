@@ -77,32 +77,26 @@ int is_palindrome(char s[])
     return is_equal(s, s2); // comparing strings
 }
 
-void capitalize_word(char *str)
-{
-    int i = 0;
-    
-    // Capitalize the first character of the string
-    if (str[i] != '\0' && islower(str[i]))
-        str[i] = toupper(str[i]);
-        
-    // Loop through each character of the string
-    while (str[i] != '\0') {
-        // If the current character is a space
-        if (str[i] == ' ') {
-            i++; // Move to the next character
-            
-            // If the next character is lowercase, capitalize it
-            if (str[i] != '\0' && islower(str[i]))
-                str[i] = toupper(str[i]);
-        } else {
-            // If the current character is uppercase, convert it to lowercase
-            if (isupper(str[i]))
-                str[i] = tolower(str[i]);
+void capitalize_word(char *str) {
+    for(int i = 0; str[i] != '\0'; i++)
+    {
+        if(i == 0)
+        {
+            if(str[i] >= 'a' && str[i] <= 'z')
+            {
+                str[i] = str[i] - 32;
+            }
         }
-        
-        i++; // Move to the next character
+        else if(str[i-1] == ' ')
+        {
+            if(str[i] >= 'a' && str[i] <= 'z')
+            {
+                str[i] = str[i] - 32;
+            }
+        }
     }
 }
+
 
 void swap(char *a, char *b)
 {
