@@ -1,0 +1,5 @@
+This is a test line.
+cat
+dog
+hat
+This is the last line.
