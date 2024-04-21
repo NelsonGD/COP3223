@@ -1,0 +1,79 @@
+/* Problem: A box has a letter label, volume of the box (assume that it is int), and a color (string). This program takes input for some boxes and then display them. 
+The program also shows identical boxes for each box.
+
+This example shows how to use pointer to structure in this process
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+// declaring structure
+struct box {
+  int volume;
+  char label;
+  char color[15];
+};
+
+// prototypes
+void initBox(struct box *b);
+void printBox(struct box b);
+int equal(struct box a, struct box b);
+
+#define SIZE	5
+
+int main() 
+{
+    // variable declaraction
+  int i, j;
+  struct box my_set[SIZE]; // array that for each box there are three variables from struct
+
+  // Initialize all boxes based on user input
+  for (i=0; i<SIZE; i++) 
+  {
+    initBox(&my_set[i]);
+    printBox(my_set[i]);
+    //printf("In main: %d %c %s\n", my_set[i].volume, my_set[i].label, my_set[i].color);
+
+  }
+
+  // See if any pair are equal
+  for (i=0; i<SIZE; i++) 
+  {
+    for (j=i+1; j<SIZE; j++) 
+    {
+      if (equal(my_set[i],my_set[j]))
+        printf("Boxes %d and %d are identical.\n",i,j); 
+    }
+  }
+
+  printf("Printing all the boxes: \n");
+  for (i=0;i<SIZE; i++)
+    printBox(my_set[i]);
+}
+
+// b will be initialized with information entered by the user.
+void initBox(struct box *b) 
+{
+
+  printf("Enter volume, label and color: ");
+  scanf("%d %c %s", &(b->volume), &(b->label), b->color);
+
+}
+
+// b's members will be printed out.
+void printBox(struct box b) 
+{
+    printf("Printing box: %d %c %s\n", b.volume, b.label, b.color);
+}
+
+/* return 1 if each corresponding component of boxes                 a and b are equal, otherwise return 0.
+*/
+int equal(struct box a, struct box b) 
+{
+
+  if (a.volume == b.volume && a.label  == b.label && 
+      strcmp(a.color, b.color)==0)
+    return 1;
+  else
+    return 0;
+}
